@@ -3,13 +3,13 @@ const router = express.Router();
 const db = require('../../module/pool.js');
 let product = require('../../model/schema/product');
 
-router.get('/:product_id', function (req, res) {
+router.get('/:product_idx', function (req, res) {
 
-    let product_idx = req.params.product_id;
+    let product_idx = req.params.product_idx;
 
     var data = new Array();
 
-    project.find({
+    product.find({
             _id: product_idx
         },
 
@@ -27,13 +27,17 @@ router.get('/:product_id', function (req, res) {
                         img_url : [],
                         detail_url : [],
                     }
-                    temp.name = result[0].name;
-                    temp.price = result[0].price;
-                    temp.img_url = result[0].img_url;
-                    temp.detail_url = result[0].detail_url;
+                    temp.name = result[i].name;
+                    temp.price = result[i].price;
+                    temp.img_url = result[i].img_url;
+                    temp.detail_url = result[i].detail_url;
                     
                     data.push(temp);
                 }
+                res.status(200).send({
+                    message: "success",
+                    result : data
+                });
             }
         });
 
