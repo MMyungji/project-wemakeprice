@@ -6,7 +6,6 @@ var productSchema = new Schema({
     price : Number,
     img_url : Array,
     detail_url : Array,
-    popularity : Number,
     category_idx : String,
     semiCategory_idx : String
 },{
