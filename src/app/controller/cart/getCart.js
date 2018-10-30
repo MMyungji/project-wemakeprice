@@ -16,11 +16,13 @@ router.get('/', function (req, res) {
 			for (let i = 0; i < result.length; i++) {
 
 				let temp = {
+					product_idx : "",
 					product_name : "",
 					product_img : [],
 					product_price : "",
 					product_count : ""
 				}
+				temp.product_idx = result[i].product_idx;
 				temp.product_name = result[i].product_name;
 				temp.product_img = result[i].product_img;
 				temp.product_price = result[i].product_price;
