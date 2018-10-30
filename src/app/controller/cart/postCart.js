@@ -3,6 +3,8 @@ const router = express.Router();
 
 let product = require('../../model/schema/product');
 let cart = require('../../model/schema/cart');
+const upload = require('../../../config/multer');
+const pool = require('../../module/pool.js');
 
 router.post('/', async (req, res, next) => {
 

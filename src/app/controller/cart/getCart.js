@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-let product = require('../../model/schema/product');
 let cart = require('../../model/schema/cart');
 
 router.get('/', function (req, res) {
@@ -16,12 +15,14 @@ router.get('/', function (req, res) {
 			for (let i = 0; i < result.length; i++) {
 
 				let temp = {
+					cart_idx : "",
 					product_idx : "",
 					product_name : "",
 					product_img : [],
 					product_price : "",
 					product_count : ""
 				}
+				temp.cart_idx = result[i]._id;
 				temp.product_idx = result[i].product_idx;
 				temp.product_name = result[i].product_name;
 				temp.product_img = result[i].product_img;
