@@ -28,7 +28,7 @@ router.get('/:category_idx', function (req, res) {
 					content : ""
 				}
 				temp.title = result[i].title;
-				temp.img_url = result[i].img_url;
+				temp.img_url = result[i].img_url[0];
 				temp.hash = result[i].hash;
 				temp.content = result[i].content;
 

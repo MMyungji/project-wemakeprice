@@ -10,4 +10,7 @@ router.use('/', semi);
 const category = require('./controller/category/category_routes');
 router.use('/', category);
 
+const cart = require('./controller/cart/cart_routes');
+router.use('/', cart);
+
 module.exports = router;

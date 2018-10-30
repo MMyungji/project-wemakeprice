@@ -25,16 +25,11 @@ router.post('/', multiUpload, async (req, res, next) => {
        for (let i = 0 ; i < req.files.detail_img.length ; i++) {
           tempArray2.push(req.files.detail_img[i].location);
       }
-
-
-
-
       await product.create({
         name : req.body.name,
         price : req.body.price,
         img_url : tempArray,
         detail_url : tempArray2,
-        popularity : req.body.popularity,
         category_idx : req.body.category_idx,
         semiCategory_idx : req.body.semiCategory_idx
     }, async function (err, products) {

@@ -22,15 +22,17 @@ router.get('/:product_idx', function (req, res) {
                 for (let i = 0; i < result.length; i++) {
                     
                     let temp = {
+                        product_idx : "",
                         name : "",
                         price : "",
                         img_url : [],
                         detail_url : [],
                     }
+                    temp.product_idx = result[i]._id;
                     temp.name = result[i].name;
                     temp.price = result[i].price;
-                    temp.img_url = result[i].img_url;
-                    temp.detail_url = result[i].detail_url;
+                    temp.img_url = result[i].img_url[0];
+                    temp.detail_url = result[i].detail_url[0];
                     
                     data.push(temp);
                 }
