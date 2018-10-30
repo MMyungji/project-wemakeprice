@@ -10,4 +10,7 @@ router.use('/cart', getCart);
 const deleteCart = require('./deleteCart');
 router.use('/cart', deleteCart);
 
+const updateCart = require('./updateCart');
+router.use('/cart', updateCart);
+
 module.exports = router;
