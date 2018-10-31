@@ -19,4 +19,7 @@ router.use('/', cart);
 const search = require('./controller/search/search_routes');
 router.use('/', search);
 
+const purchase = require('./controller/purchase/purchase_routes');
+router.use('/', purchase);
+
 module.exports = router;

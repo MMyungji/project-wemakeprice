@@ -46,9 +46,7 @@ router.delete('/',async (req, res, next) => {
 						check = false;
 					}else{
 						check = true;
-						cart.find({
-
-						})
+						
 
 					}
 				}
