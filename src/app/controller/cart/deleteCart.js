@@ -38,7 +38,7 @@ router.delete('/',async (req, res, next) => {
 	if (typeof(item_to_buy)=='object'){
 		for (let i = 0 ; i < item_to_buy.length ; i++) {
 
-			cart.deleteOne({_id:item_to_buy[i]}, function(err,output){
+			await cart.deleteOne({_id:item_to_buy[i]}, function(err,output){
 				if(err){
 					check = false;
 				}else{
@@ -52,9 +52,11 @@ router.delete('/',async (req, res, next) => {
 
 					}
 				}
+				check = true;
+				console.log('check1 : ',check);
 			});
 		}
-		console.log(check);
+		console.log('check_2 : ',check);
 		if(check) {
 			res.status(200).send({
 				message: 'payment successful'
