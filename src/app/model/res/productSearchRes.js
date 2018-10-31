@@ -7,7 +7,7 @@ module.exports = {
                 product_idx: "",
                 name:"",
                 price:"",
-                img_url : Array
+                img_url : []
             }
             temp.product_idx = result[i]._id;
             temp.name = result[i].name;

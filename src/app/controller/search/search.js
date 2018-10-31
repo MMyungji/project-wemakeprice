@@ -7,26 +7,29 @@ let productSearchRes = require('../../model/res/productSearchRes');
 //keyword=검색어
 router.get('/', async (req, res, next) => {
 
-    const keyword = req.query.keyword;
+    const keyword = ".*"+req.query.keyword+".*";
+    console.log(keyword);
+
+    //const keyword = req.query.keyword;
+
 
 
     let query = {
         $or: []
     };
+
     if (keyword != undefined && keyword != '') {
 
+       query.$or.push({
+           name : {'$regex' : keyword}
+       });
 
-       
-        
-        query.$or.push({
-            name: keyword
-        });
     }
 
     product.find(query, async function (err, result) {
         if (err) {
             return res.status(405).send({
-                message: "get product fail"
+                message: "get product-list fail"
             });
         } else {
             return res.status(200).send({
