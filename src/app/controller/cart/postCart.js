@@ -61,7 +61,9 @@ router.post('/', async (req, res, next) => {
                 cart.update({ product_idx: product_idx }, { $set: req.body }, function(err, output){
                     if(err) res.status(500).json({ error: 'database failure' });
                     if(!output.n) return res.status(404).json({ error: 'product not found' });
-                    res.json( { message: 'success' } );
+                    res.status(201).send({
+                        message: "success"
+                    });
                 })
             }
         }
