@@ -7,6 +7,7 @@ var cartSchema = new Schema({
     product_img : String,
     product_price : Number,
     product_count : Number,
+    check : {type : Boolean, default : true},
     create_at : {type : Date, default : Date.now}
 
 },{

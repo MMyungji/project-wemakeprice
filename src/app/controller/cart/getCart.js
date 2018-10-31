@@ -15,6 +15,7 @@ router.get('/', function (req, res) {
 			for (let i = 0; i < result.length; i++) {
 
 				let temp = {
+					check : "",
 					cart_idx : "",
 					product_idx : "",
 					product_name : "",
@@ -22,6 +23,7 @@ router.get('/', function (req, res) {
 					product_price : "",
 					product_count : ""
 				}
+				temp.check = result[i].check;
 				temp.cart_idx = result[i]._id;
 				temp.product_idx = result[i].product_idx;
 				temp.product_name = result[i].product_name;
