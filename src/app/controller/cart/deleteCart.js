@@ -32,7 +32,7 @@ router.delete('/',async (req, res, next) => {
 
 	//console.log(req.body.cart_idx);
 	//console.log(req.body);
-	//const item_to_buy = req.body.cart_idx;
+	const item_to_buy = req.body.cart_idx;
 	var check = false;
 
 	if (typeof(item_to_buy)=='object'){
