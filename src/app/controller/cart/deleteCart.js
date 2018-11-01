@@ -30,9 +30,9 @@ const item_to_buy_type = req.body.cart_idx.toString();
 
 router.delete('/',async (req, res, next) => {
 
-	console.log(req.body.cart_idx);
-	console.log(req.body);
-	const item_to_buy = req.body.cart_idx;
+	//console.log(req.body.cart_idx);
+	//console.log(req.body);
+	//const item_to_buy = req.body.cart_idx;
 	var check = false;
 
 	if (typeof(item_to_buy)=='object'){
@@ -51,10 +51,10 @@ router.delete('/',async (req, res, next) => {
 					}
 				}
 				check = true;
-				console.log('check1 : ',check);
+				//console.log('check1 : ',check);
 			});
 		}
-		console.log('check_2 : ',check);
+		//console.log('check_2 : ',check);
 		if(check) {
 			res.status(200).send({
 				message: 'payment successful'
