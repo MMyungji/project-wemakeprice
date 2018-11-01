@@ -71,7 +71,7 @@ router.get('/:category_idx', function (req, res) {
 				semi_result : data2
 			});
 
-		}).sort({'title' : -1}); // semi
+		}).sort({'_id' : -1}); // semi
 		}
 
 
