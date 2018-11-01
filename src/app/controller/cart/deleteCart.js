@@ -5,7 +5,7 @@ let cart = require('../../model/schema/cart');
 let purchase = require('../../model/schema/purchase');
 
 router.delete('/:cart_idx', function(req, res){
-	cart.remove({_id: req.params.cart_idx}, function(err, output){
+	cart.deleteOne({_id: req.params.cart_idx}, function(err, output){
 		if(err){
 			res.status(405).json({ error: "database failure" });
 		}else{

@@ -28,7 +28,7 @@ router.get('/:category_idx', function (req, res) {
 					content : ""
 				}
 				temp.title = result[i].title;
-				temp.img_url = result[i].img_url[0];
+				temp.img_url = result[i].img_url;
 				temp.hash = result[i].hash;
 				temp.content = result[i].content;
 
@@ -71,7 +71,7 @@ router.get('/:category_idx', function (req, res) {
 				semi_result : data2
 			});
 
-		}).sort({'_id' : -1}); // semi
+		}).sort({'_id' : 1}); // semi
 		}
 
 
