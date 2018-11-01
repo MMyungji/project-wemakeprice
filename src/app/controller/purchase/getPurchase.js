@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
                     result : data
                 });
             }
-        }).sort({'create_at' : -1}).limit(5);
+        }).sort({'create_at' : -1}).limit(10);
 
 });
 
